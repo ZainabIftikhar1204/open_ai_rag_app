@@ -1,6 +1,8 @@
 import fitz  # PyMuPDF
 from fastapi import UploadFile
 
+my_api_key = process.env.OPEN_AI_API_KEY
+
 
 def extract_text_from_pdf(file_bytes: bytes):
     # Open the PDF file
@@ -58,7 +60,7 @@ def process_text_variable(text_variable):
 
 def ragModel(text, question):
   if not text.strip():
-      llm = ChatOpenAI(temperature=0.5, api_key=process.env.OPEN_AI_API_KEY)
+      llm = ChatOpenAI(temperature=0.5, api_key=my_api_key)
       result = llm(question)
       return result.content
 
@@ -82,7 +84,7 @@ def ragModel(text, question):
   context_docs = db.similarity_search(question)
   context_docs = "\n".join([doc.page_content for doc in context_docs])
 
-  llm = ChatOpenAI(temperature=0.5)
+  llm = ChatOpenAI(temperature=0.5, api_key=my_api_key)
   qa_chain = LLMChain(llm=llm, prompt=prompt)
   result = qa_chain(
     {"context": context_docs, "question": question}
