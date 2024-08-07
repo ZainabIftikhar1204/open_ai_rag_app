@@ -3,6 +3,5 @@ chromadb
 langchain_community
 langchain-openai
 langchain
-transformers
 fastapi==0.95.0
 typing
