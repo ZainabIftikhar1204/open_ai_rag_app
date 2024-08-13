@@ -1,7 +1,8 @@
 import fitz  # PyMuPDF
 from fastapi import UploadFile
+import os
 
-my_api_key = process.env.OPEN_AI_API_KEY
+my_api_key = os.getenv("OPENAI_API_KEY")
 
 
 def extract_text_from_pdf(file_bytes: bytes):
