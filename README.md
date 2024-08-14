@@ -1,5 +1,5 @@
 # OpenAI RAG App
-This is a RAG (Retrieval Augmented Generation) App. This means that you can utilize the app to ask questions about a particular document that you have. The app takes a PDF file as an optional argument so you can ask any question related to the content in that particular document. Otherwise, you can also ask any generic question from the application without uploading any document. 
+This is a RAG (Retrieval Augmented Generation) App created using OpenAI API. This means that you can utilize the app to ask questions about a particular document that you have. The app takes a PDF file as an optional argument so you can ask any question related to the content in that particular document. Otherwise, you can also ask any generic question from the application without uploading any document. 
 
 ## Interface:
 You can find a simple interface developed with gradio on the following link:
